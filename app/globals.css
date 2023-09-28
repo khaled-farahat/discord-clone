@@ -80,3 +80,15 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar:hover {
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+  }
+}
