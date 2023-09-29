@@ -87,6 +87,10 @@ body,
     -ms-overflow-style: none;
   }
 
+  /* .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  } */
+
   .hide-scrollbar:hover {
     scrollbar-width: auto;
     -ms-overflow-style: auto;

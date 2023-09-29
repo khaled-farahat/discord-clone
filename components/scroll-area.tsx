@@ -6,7 +6,7 @@ interface ScrollAreaProps {
 
 const ScrollArea = ({ children }: ScrollAreaProps) => {
   return (
-    <div className="flex-1 w-full overflow-y-auto hide-scrollbar items-start flex flex-col">
+    <div className="hide-scrollbar flex w-full flex-1 flex-col items-start overflow-y-auto">
       {children}
     </div>
   );
