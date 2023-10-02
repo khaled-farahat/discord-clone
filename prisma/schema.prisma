@@ -27,7 +27,7 @@ model Server {
   id String @id @default(uuid())
   name String
   imageUrl String @db.Text
-  inviteCode String @db.Text
+  inviteCode String @unique
 
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
@@ -87,3 +87,11 @@ model Channel {
   @@index([profileId])
   @@index([serverId])
 }
+
+
+// every time you update schema run
+// close server
+// npx prisma migrate reset
+// to reset db so all data created correclty
+// npx prisma generate
+// npx prisma db push
