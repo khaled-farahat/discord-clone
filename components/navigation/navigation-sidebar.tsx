@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation";
 
 import { UserButton } from "@clerk/nextjs";
-import ScrollArea from "@/components/scroll-area";
+// import ScrollArea from "@/components/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "@/components/mode-toggle";
 
@@ -29,10 +30,10 @@ const NavigationSidebar = async () => {
   });
 
   return (
-    <div className="flex h-full w-full flex-col items-center space-y-4 py-3 text-primary dark:bg-[#1e1f22]">
+    <div className="flex h-full w-full flex-col items-center space-y-4 py-3 text-primary dark:bg-[#1e1f22] bg-[#E3E5E8]">
       <NavigationAction />
       <Separator className="mx-auto h-[2px] w-10 rounded-md bg-zinc-300 dark:bg-zinc-700" />
-      <ScrollArea>
+      <ScrollArea className="flex-1 w-full">
         {servers.map((server) => (
           <div key={server.id} className="mb-4">
             <NavigationItem
