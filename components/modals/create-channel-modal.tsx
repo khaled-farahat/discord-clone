@@ -72,7 +72,6 @@ const CreateChannelModal = () => {
           serverId: params?.serverId,
         },
       });
-
       await axios.post(url, values);
 
       form.reset();
@@ -125,7 +124,11 @@ const CreateChannelModal = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Channel Type</FormLabel>
-                    <Select disabled={isLoading} defaultValue={field.value}>
+                    <Select
+                      disabled={isLoading}
+                      defaultValue={field.value}
+                      onValueChange={field.onChange}
+                    >
                       <FormControl>
                         <SelectTrigger className="border-0 bg-zinc-300/50 capitalize text-black outline-none ring-offset-0 focus:ring-0 focus:ring-offset-0">
                           <SelectValue placeholder="Select a channel type" />
@@ -135,7 +138,6 @@ const CreateChannelModal = () => {
                         {Object.values(ChannelType).map((type) => (
                           <SelectItem
                             key={type}
-                            defaultValue={type}
                             value={type}
                             className="capitalize"
                           >
