@@ -135,6 +135,7 @@ const CreateChannelModal = () => {
                         {Object.values(ChannelType).map((type) => (
                           <SelectItem
                             key={type}
+                            defaultValue={type}
                             value={type}
                             className="capitalize"
                           >
